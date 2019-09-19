@@ -31,7 +31,8 @@ library AddrArrayLib {
 
     /**
      * @notice remove an address from the array
-     * @dev it wil find the element and then Swap it with the last element and then delete it
+     * @dev finds the element, swaps it with the last element, and then deletes it;
+     *      returns a boolean whether the element was found and deleted
      * @param self Storage array containing address type variables
      * @param element the element to remove from the array
      */
@@ -48,10 +49,12 @@ library AddrArrayLib {
 
     /**
      * @notice get the address at a specific index from array
+     * @dev revert if the index is out of bounds
      * @param self Storage array containing address type variables
      * @param index the index in the array
      */
     function getAddressAtIndex(Addresses storage self, uint256 index) internal view returns (address) {
+        require(index < size(self), "the index is out of bounds");
         return self._items[index];
     }
 

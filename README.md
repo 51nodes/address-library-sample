@@ -11,8 +11,11 @@ The AddrArrayLib Library provides utility functions to work with address[] types
 
 ### Setup
 * Download Ganache https://github.com/trufflesuite/ganache/releases/v2.1.0
-* Set Ganache NETWORK ID 5777
-* Set Ganache Port Number 7545
+    * Set Ganache NETWORK ID 5777
+    * Set Ganache Port Number 8545
+
+* Alternative using docker https://hub.docker.com/r/trufflesuite/ganache-cli/
+    * docker run -d -p 8545:8545 trufflesuite/ganache-cli:latest -a 10
 
 * From the commandline run:
   * `npm install -g truffle`

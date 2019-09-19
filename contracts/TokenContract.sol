@@ -30,7 +30,7 @@ contract TokenContract is Ownable {
     }
 
     function mintToken(address to, uint256 amount) external {
-        require(trustedMinters.exists(msg.sender), 'The sender address is not registered as a Minter');
+        require(trustedMinters.exists(msg.sender), 'The sender address is not registered as a minter');
         totalSupply = totalSupply.add(amount);
         balances[to] = balances[to].add(amount);
     }
