@@ -39,11 +39,11 @@ contract TokenContract is Ownable {
         return totalSupply;
     }
 
-    function removeMinterFromTrustedList(address minter) public onlyOwner() {
+    function removeMinter(address minter) public onlyOwner() {
         trustedMinters.removeAddress(minter);
     }
 
-    function addMinterToTrustedList(address minter) public onlyOwner() {
+    function addMinter(address minter) public onlyOwner() {
         trustedMinters.pushAddress(minter);
     }
 

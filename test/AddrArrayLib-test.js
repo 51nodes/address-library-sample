@@ -21,9 +21,9 @@ contract('TokenContract', (accounts) => {
 
   it('should add 3 addresses as minters to the TokenContract', async () => {
 
-    await tokenContractInstance.addMinterToTrustedList(accounts[1], { from: owner });
-    await tokenContractInstance.addMinterToTrustedList(accounts[2], { from: owner });
-    await tokenContractInstance.addMinterToTrustedList(accounts[3], { from: owner });
+    await tokenContractInstance.addMinter(accounts[1], { from: owner });
+    await tokenContractInstance.addMinter(accounts[2], { from: owner });
+    await tokenContractInstance.addMinter(accounts[3], { from: owner });
 
     let numberOfTrustedMinters = (await tokenContractInstance.getNumberOfMinters.call()).toNumber();
     assert.equal(numberOfTrustedMinters, 3, 'the trusted minters array has more/less than 3 minters ');
@@ -50,7 +50,7 @@ contract('TokenContract', (accounts) => {
     let isTrustedMinterBeforeRemove = await tokenContractInstance.isAddressListedAsMinter.call(accounts[2]);
     assert.equal(isTrustedMinterBeforeRemove, true, 'the address is not a minter');
 
-    await tokenContractInstance.removeMinterFromTrustedList(accounts[2], { from: owner });
+    await tokenContractInstance.removeMinter(accounts[2], { from: owner });
 
     let numberOfTrustedMinters = (await tokenContractInstance.getNumberOfMinters.call()).toNumber();
     assert.equal(numberOfTrustedMinters, 2, 'the trusted minters array has more/less than 2 minters ');
