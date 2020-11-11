@@ -1,5 +1,5 @@
 const TokenContract = artifacts.require('TokenContract');
-const { expectRevert } = require('openzeppelin-test-helpers');
+const { expectRevert } = require('@openzeppelin/test-helpers');
 
 contract('TokenContract', (accounts) => {
 
@@ -13,7 +13,7 @@ contract('TokenContract', (accounts) => {
     assert.equal(initTotalSupply, 100, 'the init total supply was not 100');
   });
 
-  it('should check that the number of trusted minters 0 at the beginning', async () => {
+  it('should check that the number of trusted minters is 0 at the beginning', async () => {
 
     let numberOfTrustedMinters = (await tokenContractInstance.getNumberOfMinters.call()).toNumber();
     assert.equal(numberOfTrustedMinters, 0, 'the trusted minters array is not empty');
@@ -45,7 +45,7 @@ contract('TokenContract', (accounts) => {
 
   });
 
-  it('should remove the second minter from array', async () => {
+  it('should remove the second minter from the array', async () => {
 
     let isTrustedMinterBeforeRemove = await tokenContractInstance.isAddressListedAsMinter.call(accounts[2]);
     assert.equal(isTrustedMinterBeforeRemove, true, 'the address is not a minter');

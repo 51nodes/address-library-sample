@@ -8,7 +8,8 @@
 
 */
 
-pragma solidity >=0.4.25 <0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 <0.8.0;
 
 library AddrArrayLib {
     using AddrArrayLib for Addresses;
