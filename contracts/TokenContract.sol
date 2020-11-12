@@ -8,10 +8,11 @@
 
 */
 
-pragma solidity >= 0.4.25 < 0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 <0.8.0;
 
-import '../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol';
-import '../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol';
+import '@openzeppelin/contracts/access/Ownable.sol';
+import '@openzeppelin/contracts/math/SafeMath.sol';
 import './AddrArrayLib.sol';
 
 contract TokenContract is Ownable {
