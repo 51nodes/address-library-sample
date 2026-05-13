@@ -1,3 +1,9 @@
+# Archived Repository
+
+> **Status:** Archived  
+> This repository is no longer actively maintained.  
+> It is kept public for reference and historical purposes only.
+
 # Address-Library-Sample
 
 The AddrArrayLib Library provides utility functions to work with address[] types
